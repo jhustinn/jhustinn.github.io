@@ -15,7 +15,7 @@ keyword.addEventListener("keyup", function () {
 
   //   ajax execution
   if (keyword.value == "photo") {
-    xhr.open("get", "port/assets/ajax/me.html", true);
+    xhr.open("get", "port/assets/ajax/me.php", true);
     xhr.send();
   } else if (keyword.value == "school") {
     xhr.open("get", "port/assets/ajax/school.php", true);
