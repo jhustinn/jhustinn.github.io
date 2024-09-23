@@ -603,6 +603,7 @@
         </div>
         
         <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <!-- <script>
           document.getElementById("contact-form").addEventListener("submit", function(event) {
             event.preventDefault(); // Mencegah pengiriman formulir secara default
@@ -630,9 +631,19 @@
             // Mengirim form melalui emailjs
             emailjs.sendForm('service_u4a1nbs', 'template_r02hjfd', this)
               .then(function() {
-                alert('Pesan Anda telah dikirim!');
+                Swal.fire({
+                  icon: 'success',
+                  title: 'Sended!',
+                  text: 'Your message successfully sended!.',
+                  confirmButtonText: 'Ok'
+                });
               }, function(error) {
-                alert('Gagal mengirim pesan: ' + JSON.stringify(error));
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Failed!',
+                  text: 'Failed to send message: ' + JSON.stringify(error),
+                  confirmButtonText: 'Coba lagi'
+                });
               });
           });
         </script>
