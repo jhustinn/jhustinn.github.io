@@ -603,7 +603,7 @@
         </div>
         
         <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-        <script>
+        <!-- <script>
           document.getElementById("contact-form").addEventListener("submit", function(event) {
             event.preventDefault(); // Mencegah pengiriman formulir secara default
         
@@ -618,6 +618,23 @@
               });
         });
         
+        </script> -->
+        <script>
+          (function(){
+            emailjs.init("54lQ9DZYM0_Jvx22j"); // Ganti dengan API Key Anda
+          })();
+        
+          document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Mencegah pengiriman form ke URL lain
+            
+            // Mengirim form melalui emailjs
+            emailjs.sendForm('service_u4a1nbs', 'template_r02hjfd', this)
+              .then(function() {
+                alert('Pesan Anda telah dikirim!');
+              }, function(error) {
+                alert('Gagal mengirim pesan: ' + JSON.stringify(error));
+              });
+          });
         </script>
         
 
